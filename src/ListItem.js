@@ -7,7 +7,8 @@ var styles = {
 		marginLeft: '7px',
 		fontSize: '11px',
 		fontWeight: 'bold',
-		lineHeight: '50px'
+		lineHeight: '50px',
+		textDecoration: 'none'
 	},
 	item: {
 		display: 'flex',
@@ -19,6 +20,7 @@ var styles = {
 		borderRadius: '50%',
 		width: '30px',
 		height: '30px',
+		marginLeft: '10px'
 
 	}
 }
@@ -30,10 +32,12 @@ export default React.createClass({
 	},
 	render: function() {
 		return (
-			<div style={styles.item}>
-				<img style={styles.thumbnail} src={this.props.picture.thumbnail}/>
-				<p style={styles.name}>{this.props.name.first} {this.props.name.last}</p>
-			</div>
+				<div>
+					<div style={styles.item}>
+						<img style={styles.thumbnail} src={this.props.picture.thumbnail} alt={this.props.name.first + this.props.name.last + ' picture'}/>
+						<p style={styles.name}>{this.props.name.first} {this.props.name.last}</p>
+					</div>
+				</div>
 		)
 	}
 })

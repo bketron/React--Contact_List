@@ -1,10 +1,15 @@
-import React from 'react'
-import { BrowserRouter , Route } from 'react-router-dom'
-import ContactList from './ContactList'
+import React from 'react';
+import ContactList from './ContactList';
 import SingleView from './SingleView'
+import { BrowserRouter , Route } from 'react-router-dom'
 
 export default React.createClass({
-  render() {
+  getInitialState: function() {
+    return{
+      data: require('./data.json')
+    }
+  },
+  render: function(){
     return (
       <BrowserRouter>
         <div>
@@ -16,5 +21,4 @@ export default React.createClass({
       </BrowserRouter>
     )
   }
-
 })
